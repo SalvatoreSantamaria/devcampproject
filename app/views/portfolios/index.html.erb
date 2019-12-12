@@ -1,8 +1,17 @@
 <h1>Portfolio Items</h1>
 
+<a href="portfolios/new">Create New Item with a href</a>
+<%= link_to "Create New Item with link_to", new_portfolio_path%> 
+
+<%# The different between _path and _url %>
+<p>new_portfolio_path</p> <%# /portfolios/new%> <%# this is the relative path%>
+<p>new_portfolio_url</p> <%# http://localhost:3000/portfolios/new%> <%# url takes in additional arugment, subdomain argument%>
+
 <% @portfolio_items.each do | portfolio_item | %>
     <p><%= portfolio_item.title %></p>
     <p><%= portfolio_item.subtitle %></p>
     <p><%= portfolio_item.body %></p>
     <p><%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil?%></p> <%#run if portfolio_item.thumb_image is not nil%>
+    <p><%= link_to "Edit", edit_portfolio_path(portfolio_item.id) %></p>
+    <a href="portfolios/<%=portfolio_item.id%>/edit">Edit with an href</a> <%#works the same as above%>
 <% end %>

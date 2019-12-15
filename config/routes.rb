@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :portfolios
+   #all of the routes except for show
+  resources :portfolios, except: [:show]
+  #here is the custom route for show, it changes /portfolios/4 to /portfolio/4
+  get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show' 
   
   #these are the same
   #get 'pages/about'

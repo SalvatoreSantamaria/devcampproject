@@ -10,7 +10,7 @@ class Portfolio < ApplicationRecord
     end
     # second way.
     #-> is a lambda , {} is a block
-    scope :ruby_on_rails_postfolio_items, -> {where(subtitle: 'Ruby on Rails')}
+    scope :ruby_on_rails_postfolio_items, -> {where(subtitle: 'Ruby on Rails')} #lamda here
     after_initialize :set_defaults
 
 # ||= is saying if self.main_image is equal to nil, set self.main image to "http://placehold.it/600x400". use ||= instead of simply just =, because = will override.

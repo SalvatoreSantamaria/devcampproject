@@ -11,7 +11,7 @@ class Portfolio < ApplicationRecord
     def self.angular
         where(subtitle: 'Angular')
     end
-    # second way.
+    # second way. 
     #-> is a lambda , {} is a block
     scope :ruby_on_rails_postfolio_items, -> {where(subtitle: 'Ruby on Rails')} #lamda here
     after_initialize :set_defaults

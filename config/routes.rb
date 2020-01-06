@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
-   #all of the routes except for show
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
+     #all of the routes except for show
   resources :portfolios, except: [:show]
   get 'angular-items', to: 'portfolios#angular'
   #here is the custom route for show, it changes /portfolios/4 to /portfolio/4

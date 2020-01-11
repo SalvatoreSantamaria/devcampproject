@@ -1,5 +1,10 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<p>Hi, <%=current_user.first_name if current_user%> </p>
+
+
+<br>
+
 
 <%=@posts.inspect%>
 <%=@skills.inspect%> 

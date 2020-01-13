@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
     before_action :set_source
 
     def set_source
+        session[:source] = params[:q] if params[:q] #set only if params[:q] exists
     
     end
 end

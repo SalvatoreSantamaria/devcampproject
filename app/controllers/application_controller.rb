@@ -13,4 +13,11 @@ class ApplicationController < ActionController::Base
     # end
 
     include DeviseWhitelist
+
+
+    before_action :set_source
+
+    def set_source
+    
+    end
 end

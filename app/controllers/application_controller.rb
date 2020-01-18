@@ -13,12 +13,7 @@ class ApplicationController < ActionController::Base
     # end
 
     include DeviseWhitelist
+    include SetSource
 
 
-    before_action :set_source
-
-    def set_source
-        session[:source] = params[:q] if params[:q] #set only if params[:q] exists
-    
-    end
 end

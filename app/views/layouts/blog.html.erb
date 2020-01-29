@@ -25,7 +25,7 @@
     <%# yield is where the pages slide in and change %>
     <%= yield %>
 
-    <%= render "shared/nav" %>
+    <%= render "shared/nav", location: 'bottom' %>
 
     <% if session[:source] %>
       <p>

@@ -1,23 +1,6 @@
 <h1>Edit Portfolio Item</h1>
 
-<%= form_for(@portfolio_item) do |form| %>
+<h1>Create a new Portfolio Item </h1>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :subtitle %>
-    <%= form.text_field :subtitle %>
-  </div>
-
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<%# passing in data that the form can use %>
+<%= render 'form', portfolio_item: @portfolio_item %>

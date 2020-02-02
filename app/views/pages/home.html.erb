@@ -5,10 +5,17 @@
 
 <br>
 
-
+<h1>Posts</h1>
 <%=@posts.inspect%>
+<br>
+
+<h1>Skills
 <%=@skills.inspect%> 
 <%# #check out inspect!!!! %>
 <hr>
 
+<%= sample_helper%>
 
+<%= content_tag :p, class: "my-special-class" do %>
+Hi, I am in a paragraph tag
+<%end%>

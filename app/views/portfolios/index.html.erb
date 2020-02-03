@@ -7,13 +7,4 @@
 <p>new_portfolio_path</p> <%# /portfolios/new%> <%# this is the relative path%>
 <p>new_portfolio_url</p> <%# http://localhost:3000/portfolios/new%> <%# url takes in additional arugment, subdomain argument%>
 
-<% @portfolio_items.each do | portfolio_item | %>
-    <p><%= link_to portfolio_item.title,  portfolio_show_path(portfolio_item.id)%></p> <%#don't actually need the id, this will work fine passing in portfolio_item%>
-    <p><%= portfolio_item.subtitle %></p>
-    <p><%= portfolio_item.body %></p>
-    <p><%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil?%></p> <%#run if portfolio_item.thumb_image is not nil%>
-    <%= link_to "Edit", edit_portfolio_path(portfolio_item.id) %>
-    <a href="portfolios/<%=portfolio_item.id%>/edit">Edit with an href</a> <%#works the same as above%>
-    <%= link_to "Delete", portfolio_path(portfolio_item), method: :delete, data: {confirm: "Are you sure?"} %> <%#the reason this works is because method: :delete, otherwise rails doesnt know this is a delete and will redirect to the show page%>
-    <hr>
-<% end %>
+<%= render @portfolio_items %>

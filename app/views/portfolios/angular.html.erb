@@ -1,7 +1,6 @@
 <h1>Angular Portfolio Items</h1>
 
-<a href="portfolios/new">Create New Item with a href</a>
-<%= link_to "Create New Item with link_to", new_portfolio_path%> 
+<%= link_to "Create New Item with link_to", new_portfolio_path if logged_in?(:site_admin)  %> 
 
 <%# The different between _path and _url %>
 <p>new_portfolio_path</p> <%# /portfolios/new%> <%# this is the relative path%>
@@ -12,8 +11,8 @@
     <p><%= portfolio_item.subtitle %></p>
     <p><%= portfolio_item.body %></p>
     <p><%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil?%></p> <%#run if portfolio_item.thumb_image is not nil%>
-    <%= link_to "Edit", edit_portfolio_path(portfolio_item.id) %>
+    <%= link_to "Edit", edit_portfolio_path(portfolio_item) if logged_in?(:site_admin) %>
     <a href="portfolios/<%=portfolio_item.id%>/edit">Edit with an href</a> <%#works the same as above%>
-    <%= link_to "Delete", portfolio_path(portfolio_item), method: :delete, data: {confirm: "Are you sure?"} %> <%#the reason this works is because method: :delete, otherwise rails doesnt know this is a delete and will redirect to the show page%>
+    <%= link_to "Delete", portfolio_path(portfolio_item), method: :delete, data: {confirm: "Are you sure?"} if logged_in?(:site_admin) %> <%#the reason this works is because method: :delete, otherwise rails doesnt know this is a delete and will redirect to the show page%>
     <hr>
 <% end %>

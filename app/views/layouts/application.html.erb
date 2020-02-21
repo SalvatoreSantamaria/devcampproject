@@ -14,16 +14,18 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%# passing in location from shared/nav %>
-    <%= render "shared/nav", location: 'top'%>
-
-    <%= login_helper%>
-    <%# yield is where the pages slide in and change %>
-    <%= yield %>
-    <%= source_helper("application")%>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <%# passing in location from shared/nav %>
+          <%= render "shared/application_nav"%>
+          <%= login_helper%>
+          <%# yield is where the pages slide in and change %>
+          <%= yield %>
+          <%= source_helper("application")%>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
 

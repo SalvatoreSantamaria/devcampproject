@@ -19,7 +19,7 @@
         <div class="cover-container">
           <%# passing in location from shared/nav %>
           <%= render "shared/application_nav"%>
-          <%= login_helper%>
+          <%= login_helper 'nav-link'%>
           <%# yield is where the pages slide in and change %>
           <%= yield %>
           <%= render "shared/application_footer"%>

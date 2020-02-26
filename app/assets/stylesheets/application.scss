@@ -13,7 +13,7 @@
 
  */
 
- @import "bootstrap"
+ @import "bootstrap";
 
  /*
  * Globals
@@ -175,3 +175,11 @@ body {
     width: 55rem;
   }
 }
+
+/*
+ * Custom Styles
+ */
+
+ .card-block {
+   color: black;
+ }

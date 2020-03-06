@@ -1,5 +1,6 @@
 module ApplicationHelper
-    def login_helper style
+    #set login_helper style to an empty string. fixes wrong number of arguments bug.
+    def login_helper style = ""
         if current_user.is_a?(GuestUser)
             # need to concat because ruby will return the last item only
             (link_to "Register", new_user_registration_path, class: style) + 

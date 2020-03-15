@@ -1,29 +1,6 @@
 <div class="col-sm-8 blog-main">
-  
-  <%# rails is looks for a partial named 'blog'. 
-  the instance vairable has to be passed in from the index action.
-  the partial will render a collection without an each action.
-  rail is looking for the model controller name, which in this case is blogs %>
-  <%= render @blogs %> 
-
-  <nav class="blog-pagination">
-    <a class="btn btn-outline-primary" href="#">Older</a>
-    <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
-  </nav>
-
+  <h2> <%= @blog.title %> </h2>
+  <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin)%>
+  <p> <%= @blog.body %> </p>
 </div>
 
-<% link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>
-
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @blog.body %>
-</p>
-
-<%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin)%> |
-<%= link_to 'Back', blogs_path %>

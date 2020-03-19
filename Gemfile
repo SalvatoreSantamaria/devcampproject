@@ -66,4 +66,4 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'petergate', '~> 1.7'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 gem 'bootstrap', '~> 4.3.1'
-
+gem 'kaminari', '~>1.0', '>= 1.0.1'

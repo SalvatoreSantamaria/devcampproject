@@ -1,12 +1,16 @@
-<h1>Portfolio Items</h1>
+<div class="album text-muted">
+    <div class="container">
+        <div class="row">
+            <%#  <a href="portfolios/new">Create New Item with a href</a> %>
+            <%#= link_to "Create New Item with link_to", new_portfolio_path if logged_in?(:site_admin)%> 
 
-<a href="portfolios/new">Create New Item with a href</a>
-<%= link_to "Create New Item with link_to", new_portfolio_path%> 
+            <%# The different between _path and _url %>
+            <%# <p>new_portfolio_path</p> <%# /portfolios/new%> <%# this is the relative path%>
+            <%# <p>new_portfolio_url</p> <%# http://localhost:3000/portfolios/new%> <%# url takes in additional arugment, subdomain argument%>
 
-<%# The different between _path and _url %>
-<p>new_portfolio_path</p> <%# /portfolios/new%> <%# this is the relative path%>
-<p>new_portfolio_url</p> <%# http://localhost:3000/portfolios/new%> <%# url takes in additional arugment, subdomain argument%>
-
-<%# because the name of the instance item is switched, %>
-<%# we have to tell rails 'partial:' and 'collection:'%>
-<%= render partial: 'portfolio_item', collection: @portfolio_items %> 
+            <%# because the name of the instance item is switched, %>
+            <%# we have to tell rails 'partial:' and 'collection:'%>
+            <%= render partial: 'portfolio_item', collection: @portfolio_items %> 
+        </div>
+    </div>
+</div>

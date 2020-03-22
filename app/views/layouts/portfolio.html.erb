@@ -16,8 +16,8 @@
     <%= render 'shared/portfolio_nav' %>
     <%#  end of navbar %>
 
-    <%#  start of masthead %>
-    <%= render 'shared/portfolio_masthead'%>
+    <%#  start of masthead this will hide the portfolio masthead from the site admin%>
+    <%= render 'shared/portfolio_masthead' unless logged_in?(:site_admin)%>
     <%#  end of masthead %>
     <%#  start of footer %>
 

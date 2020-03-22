@@ -12,11 +12,16 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%# start of navbar %>
+    <%= render 'shared/portfolio_nav' %>
+    <%#  end of navbar %>
 
-    <%= render "shared/nav", location: 'top' %>
-
+    <%#  start of masthead %>
+    <%= render 'shared/portfolio_masthead'%>
+    <%#  end of masthead %>
+    <%#  start of footer %>
+    <%= render 'shared/portfolio_footer'%>
+    <%#  start of footer %>
     <%= login_helper 'nav-link'%>
 
     <%# yield is where the pages slide in and change %>

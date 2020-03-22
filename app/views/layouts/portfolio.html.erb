@@ -20,12 +20,13 @@
     <%= render 'shared/portfolio_masthead'%>
     <%#  end of masthead %>
     <%#  start of footer %>
-    <%= render 'shared/portfolio_footer'%>
+
     <%#  start of footer %>
     <%= login_helper 'nav-link'%>
 
     <%# yield is where the pages slide in and change %>
     <%= yield %>
     <%= source_helper("application")%>
+        <%= render 'shared/portfolio_footer'%>
   </body>
 </html>

@@ -180,21 +180,26 @@ body {
  * Custom Styles
  */
 
- .card-block {
-   color: black;
-   text-align: left;
- }
+.card-block {
+  color: black;
+  text-align: left;
+}
 
- .auth-links a {
-   color: black;
- }
+.auth-links a {
+  color: black;
+}
 
- .register-text {
-   text-align: right;
- }
+.register-text {
+  text-align: right;
+}
 
- .login > .card {
-   width: 22rem;
-   margin: 0 auto;
-   float: none;
- }
+.login > .card {
+  width: 22rem;
+  margin: 0 auto;
+  float: none;
+}
+
+.app-nav span{
+  margin-left: 15px;
+  margin-right: 15px;
+}

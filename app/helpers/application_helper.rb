@@ -20,16 +20,44 @@ module ApplicationHelper
             content_tag(:p, greeting, class: "source-greeting")
         end 
     end
-    # style is the css class, tag_type example is an li
+
+
+    def nav_items
+        [
+            {
+                url: root_path,
+                title: 'Home'
+            },
+            {
+                url: about_me_path,
+                title: 'About'
+            },            
+            {
+                url: contact_path,
+                title: 'Contact'
+            },
+        {
+                url: blogs_path,
+                title: 'Blog'
+            },
+            {
+                url: portfolios_path,
+                title: 'Portfolio'
+            },
+        ]
+    end 
+
+    # style is the css class
     def nav_helper style, tag_type
-        #heredoc
-nav_links = <<NAV
-<#{tag_type}><a href="#{root_path}" class="#{style}">Home</a></#{tag_type}>
-<#{tag_type}><a href="#{about_me_path}" class="#{style}">About Me</a></#{tag_type}>
-<#{tag_type}><a href="#{contact_path}" class="#{style}">Contact</a></#{tag_type}>
-<#{tag_type}><a href="#{blogs_path}" class="#{style}">Blog</a></#{tag_type}>
-<#{tag_type}><a href="#{portfolios_path}" class="#{style}">Portfolio</a></#{tag_type}>
-NAV
+        nav_links = '' 
+        nav_items.each do |item|
+            nav_links << "<#{tag_type}><a href='#{item[:url]}' class='#{style} #{active? item[:url]}'>#{item[:title]}</a></#{tag_type}>"
+        end
         nav_links.html_safe
+    end
+
+    def active? path
+            # return active if the current page matches whatever the path is
+        "active" if current_page? path
     end
 end

@@ -6,6 +6,9 @@ class Portfolio < ApplicationRecord
     include Placeholder #using a concern
     validates_presence_of :title, :body, :main_image, :thumb_image
 
+    def self.by_position
+        order("position ASC")
+    end
     # creating a custom scope (two ways to do this)
     # first way
     def self.angular

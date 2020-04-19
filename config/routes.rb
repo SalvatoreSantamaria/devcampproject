@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
      #all of the routes except for show
-  resources :portfolios, except: [:show]
+  resources :portfolios, except: [:show] do
+    #for the route portfolios/sort
+    put :sort, on: :collection 
+  end
   get 'angular-items', to: 'portfolios#angular'
   #here is the custom route for show, it changes /portfolios/4 to /portfolio/4
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show' 

@@ -17,7 +17,14 @@
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
-          <div id="background"></div>
+          <%# div id="background"></div> this was for the background image%>
+          <%= video_tag('Hacker_code_whiteblack_01_Videvo.mov', 
+          id: 'background',
+          autoplay: true,
+          loop: true, 
+          muted: true, 
+          poster: 'salvatoreprofilepic.png'
+          ) %>
           <%# passing in location from shared/nav %>
           <%= render "shared/application_nav"%>
           <%= login_helper 'nav-link'%>

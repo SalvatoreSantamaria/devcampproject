@@ -1,14 +1,21 @@
 <%= form_with(model: blog, local: true) do |form| %>
   <% if blog.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+    <% blog.errors.full_messages.each do |error|  %>
+          <%= js add_gritter(error, title: "This is the title field", sticky: false) %>
+    <% end %>
 
-      <ul>
-      <% blog.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<%# removing and replacing with the above blog errors code for gritter flash notifications
+    <%#<div id="error_explanation">
+      <%#<h2><%= pluralize(blog.errors.count, "error") %> <%#prohibited this blog from being saved:</h2>%>
+
+      <%#<ul>
+      <%#<% blog.errors.full_messages.each do |message| %>
+        <%#<li><%= message %><%#</li>%>
+      <%#<% end %>
+      <%#</ul>%>
+    <%#</div>%>
+
+
   <% end %>
 
   <div class="form-group">

@@ -20,7 +20,6 @@ class PortfoliosController < ApplicationController
 
     def new
         @portfolio_item = Portfolio.new
-        3.times { @portfolio_item.technologies.build} 
     end
 
     def create
@@ -37,7 +36,7 @@ class PortfoliosController < ApplicationController
 
     def edit
         @portfolio_item = Portfolio.find(params[:id])
-        3.times { @portfolio_item.technologies.build} 
+        #3.times { @portfolio_item.technologies.build} 
 
     end
 
@@ -72,7 +71,7 @@ class PortfoliosController < ApplicationController
 
   private 
 
-  def portfolio_params 
-    params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name])
+  def portfolio_params  #:_destroy is from cocoon gem
+    params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:id, :name, :_destroy])
   end
 end

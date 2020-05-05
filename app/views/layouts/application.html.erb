@@ -31,7 +31,8 @@
           <%# yield is where the pages slide in and change %>
           <%= yield %>
           <%= render "shared/application_footer"%>
-          <%= render "shared/alerts" %>
+          <%#= render "shared/alerts" %> <%# refactored to just call the alerts method%>
+          <%= alerts %>
           <%= source_helper("application")%>
         </div>
       </div>

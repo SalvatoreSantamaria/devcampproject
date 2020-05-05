@@ -60,4 +60,19 @@ module ApplicationHelper
             # return active if the current page matches whatever the path is
         "active" if current_page? path
     end
+
+    def alerts 
+        #this will return nil if none of these are true
+        alert = (flash[:alert] || flash[:error] || flash[:notice]) 
+
+        #if alert is true
+        if alert 
+            #using the alert variable to pass in the alert value
+            alert_generator(alert)
+        end
+    end 
+
+    def alert_generator(alert)
+        js add_gritter(alert, title: "This is the title field", sticky: false) 
+    end
 end

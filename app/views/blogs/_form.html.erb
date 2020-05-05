@@ -1,7 +1,7 @@
 <%= form_with(model: blog, local: true) do |form| %>
   <% if blog.errors.any? %>
     <% blog.errors.full_messages.each do |error|  %>
-          <%= js add_gritter(error, title: "This is the title field", sticky: false) %>
+        <%= alert_generator(error)%>
     <% end %>
 
 <%# removing and replacing with the above blog errors code for gritter flash notifications

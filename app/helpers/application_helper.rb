@@ -62,10 +62,17 @@ module ApplicationHelper
     end
 
     def alerts 
-        alert = (flash[:alert || flash[:error] || flash[:notice] ) #this will return nil if none of these are true
+        #this will return nil if none of these are true
+        alert = (flash[:alert] || flash[:error] || flash[:notice]) 
 
-        if alert #if alert is true
-            js add_gritter(alert, title: "This is the title field", sticky: false) #using the alert variable to pass in the alert value
+        #if alert is true
+        if alert 
+            #using the alert variable to pass in the alert value
+            alert_generator(alert)
         end
     end 
+
+    def alert_generator(alert)
+        js add_gritter(alert, title: "This is the title field", sticky: false) 
+    end
 end

@@ -26,7 +26,8 @@
 
     <%# yield is where the pages slide in and change %>
     <%= yield %>
+    <%= render 'shared/portfolio_footer'%>
+    <%= alerts %>
     <%= source_helper("application")%>
-        <%= render 'shared/portfolio_footer'%>
   </body>
 </html>

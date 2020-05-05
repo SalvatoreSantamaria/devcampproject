@@ -2,7 +2,7 @@
 
   <% if @portfolio_item.errors.any? %>
     <% @portfolio_item.errors.full_messages.each do |error|  %>
-          <%= js add_gritter(error, title: "This is the title field", sticky: false) %>
+          <%= alert_generator(error)%>
     <% end %>
   <% end %>
   

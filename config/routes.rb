@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  
+  # get 'topics/index'
+  # get 'topics/show' #this way we do not automatically get the id param
+  resources :topics, only: [:index, :show] #by using resources we will automatically get the id parameter
+
+
   resources :comments
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
      #all of the routes except for show

@@ -1,5 +1,5 @@
 <div class="col-sm-8 blog-main">
-  
+  <%= paginate @blogs %>
   <%# rails is looks for a partial named 'blog'. 
   the instance vairable has to be passed in from the index action.
   the partial will render a collection without an each action.

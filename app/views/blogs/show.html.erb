@@ -4,7 +4,7 @@
     <%= @blog.topic.title%>
   </p>
   <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin)%>
-  <p> <%= @blog.body %> </p>
+  <p> <%= markdown @blog.body %> </p>
 
   <!-- start of comment form. Don't show if guest user-->
   <%= render 'comments/comment_form' %>

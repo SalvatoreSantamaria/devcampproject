@@ -1,13 +1,28 @@
 
-    <div class="blog-masthead">
+<%# original %>
+    <%# <div class="blog-masthead">
       <div class="container">
         <nav class="nav blog-nav">
           <a class="nav-link " href="#">Home</a>
       <%= nav_helper 'nav-link', 'span'%>
-            <%= login_helper 'nav-link'%>
-        </nav>
+            <%#= login_helper 'nav-link'%>
+      <%#  </nav>
       </div>
+    </div> %>
+
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div class="container">
+    <%= link_to "Salvatore Santamaria", root_path, class: 'navbar-brand' %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+ 
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+     <ul class="navbar-nav ml-auto">
+       <%= nav_helper 'nav-link', 'span' %>
+       <%= login_helper 'nav-link' %>
+     </ul>
     </div>
-
-
+  </div>
+</nav>
 

@@ -8,6 +8,23 @@
             <%#= image_tag "https://thumbs.dreamstime.com/b/spring-flowers-blue-crocuses-drops-water-backgro-background-tracks-rain-113784722.jpg", width: 300, alt: "Blue Crocuses Flowers"%>
             <%# using asset pipeline and pulling in images from the images/ folder %>
             <%= image_tag "salvatoreprofilepic.png", width: 200, alt: "Profile Pic" , class: 'profile-img'%>
+            <div class="skills">
+            <% @skills.each do |skill| %>
+                <div class="skill">
+                <h4><%= skill.title %></h4>
+                <div class="progress">
+                    <div
+                    class="progress-bar progress-bar-striped bg-warning"
+                    role="progressbar"
+                    aria-valuenow="<%= skill.utilized %>"
+                    aria-valuemax="100"
+                    style="width: <%= skill.utilized %>%"
+                    ></div>
+                </div>
+                </div>
+            <% end %>
+            </div>
+
             </div>  
             <div class= "col-md-8">
                 <p> Lorem Ipsum </p>

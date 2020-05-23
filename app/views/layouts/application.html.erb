@@ -18,16 +18,16 @@
       <div class="site-wrapper-inner">
         <div class="cover-container">
           <%# div id="background"></div> this was for the background image%>
-          <%= video_tag('Hacker_code_whiteblack_01_Videvo.mov', 
+          <%= video_tag('HardDrivePhotojpeg.mp4', 
           id: 'background',
           autoplay: true,
           loop: true, 
           muted: true, 
-          poster: 'salvatoreprofilepic.png'
+          poster: 'home_bg.png'
           ) %>
           <%# passing in location from shared/nav %>
           <%= render "shared/application_nav"%>
-          <%= login_helper 'nav-link'%>
+          <%#= login_helper 'nav-link'%>
           <%# yield is where the pages slide in and change %>
           <%= yield %>
           <%= render "shared/application_footer"%>

@@ -1,9 +1,9 @@
     <div class="card" data-id="<%= portfolio_item.id %>">
         <p><%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil?%></p> <%#run if portfolio_item.thumb_image is not nil%>
         <%#don't actually need the id, this will work fine passing in portfolio_item%>
-        <p class="card-text"><span><%= link_to portfolio_item.title,  portfolio_show_path(portfolio_item.id)%></span><%= portfolio_item.subtitle %></p>
+        <p class="card-text"><span><%= link_to portfolio_item.title,  portfolio_show_path(portfolio_item.id)%>&nbsp </span><%= portfolio_item.subtitle %> </p>
     </div>
-    
+
     <%# this file has to be named portfolio_item in order for the code below to work. 
     this is a partial for manual collection. %>
     

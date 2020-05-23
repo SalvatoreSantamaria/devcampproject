@@ -73,6 +73,6 @@ module ApplicationHelper
     end 
 
     def alert_generator(alert)
-        js add_gritter(alert, title: "This is the title field", sticky: false) 
+        js add_gritter(alert, title: "Notice", sticky: false) 
     end
 end
